@@ -9,8 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.first.model.Emp;
-
 public class SqlUtil {
 
 	private static Connection con = null;
@@ -47,56 +45,56 @@ public class SqlUtil {
 		}
 	}
 
-	public static List<Emp> read() {
-		
-		if(con==null) {
-			return null;
-		}
-		
-		System.out.println("con value: "+con);
-		Statement stmt = null;
-		ResultSet rs = null;
-		
-		List<Emp> empList = new ArrayList<>();
-		
-		try{  
-			
-			stmt = con.createStatement();  
-			rs = stmt.executeQuery("select * from emp");  
-			
-			while(rs.next())  {
-				//System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getInt(3));  
-				Emp emp = new Emp();
-				int empId = rs.getInt(1);
-				emp.setId(empId);
-				emp.setName(rs.getString(2));
-				emp.setAge(rs.getInt(3));
-				empList.add(emp);
-			}
-		}
-		catch(Exception e){ 
-			e.printStackTrace();
-		}  
-		finally {
-			try {
-				if(stmt!=null) {
-					stmt.close();
-				}
-			} 
-			catch (SQLException e) {
-				e.printStackTrace();
-			}  
-			try {
-				if(rs!=null) {
-					rs.close();
-				}
-			} 
-			catch (SQLException e) {
-				e.printStackTrace();
-			}  
-		}
-		return empList;
-	}
+//	public static List<Emp> read() {
+//
+//		if(con==null) {
+//			return null;
+//		}
+//
+//		System.out.println("con value: "+con);
+//		Statement stmt = null;
+//		ResultSet rs = null;
+//
+//		List<Emp> empList = new ArrayList<>();
+//
+//		try{
+//
+//			stmt = con.createStatement();
+//			rs = stmt.executeQuery("select * from emp");
+//
+//			while(rs.next())  {
+//				//System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getInt(3));
+//				Emp emp = new Emp();
+//				int empId = rs.getInt(1);
+//				emp.setId(empId);
+//				emp.setName(rs.getString(2));
+//				emp.setAge(rs.getInt(3));
+//				empList.add(emp);
+//			}
+//		}
+//		catch(Exception e){
+//			e.printStackTrace();
+//		}
+//		finally {
+//			try {
+//				if(stmt!=null) {
+//					stmt.close();
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//			try {
+//				if(rs!=null) {
+//					rs.close();
+//				}
+//			}
+//			catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return empList;
+//	}
 	
 	//create row inside table emp
 	public static void create(String name, int age) {

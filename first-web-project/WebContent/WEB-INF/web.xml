@@ -37,4 +37,25 @@
     <url-pattern>/third</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>FormServlet</servlet-name>
+    <servlet-class>org.first.web.FormServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/form</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>studentReg</servlet-name>
+    <servlet-class>org.first.web.student.StudentController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>studentReg</servlet-name>
+    <url-pattern>/studentRegisteration</url-pattern>
+  </servlet-mapping>
+
 </web-app>
