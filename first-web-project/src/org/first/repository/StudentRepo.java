@@ -2,7 +2,7 @@ package org.first.repository;
 
 import jakarta.servlet.ServletContext;
 import org.first.model.Student;
-import org.first.sql.util.Connectionutil;
+import org.first.sql.util.ConnectionUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import java.util.List;
 public class StudentRepo {
     private static Connection connection;
  public static void Create(String name , String email) throws Exception{
-     connection= Connectionutil.openConnection();
+     connection= ConnectionUtil.openConnection();
      PreparedStatement preparedStatement = null;
      try{
          String query = "INSERT into student2 (name , email) VALUES (?,?)";
@@ -41,14 +41,14 @@ public class StudentRepo {
      }
  }
     public static List<Student> findAll()throws Exception{
-        connection=Connectionutil.openConnection();
+        connection=ConnectionUtil.openConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet=null;
         List<Student> studentList = new ArrayList<>();
         try {
             String query ="SELECT * FROM Student2";
-            preparedStatement=connection.prepareStatement(query);
-            resultSet=preparedStatement.executeQuery();
+            preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
@@ -74,7 +74,7 @@ public class StudentRepo {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            Connectionutil.closeConnection();
+            ConnectionUtil.closeConnection();
         }
         return studentList;
 

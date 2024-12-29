@@ -2,9 +2,8 @@ package org.first.sql.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-public class Connectionutil {
+public class ConnectionUtil {
         public static final String dbURL = "jdbc:mysql://localhost:3306/studentdb?";
         public static final String  user = "root";
         public static final String  password = "root";
@@ -12,6 +11,7 @@ public class Connectionutil {
 
         public static Connection openConnection() throws Exception{
             try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(dbURL,user,password);
                 if(connection != null){
                     System.out.println("Connection Successfull");

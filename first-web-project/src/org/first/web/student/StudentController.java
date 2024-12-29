@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.first.model.Student;
 import org.first.repository.StudentRepo;
 import org.first.service.StudentService;
-import org.first.sql.util.Connectionutil;
+import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -75,43 +75,20 @@ public class StudentController extends HttpServlet {
         //fetch all student from db - list of students
         try {
             List<Student> studentList = studentService.findAll();
+            System.out.println(studentList);
+
             req.setAttribute("studentList",studentList);
-//            for (Student student : studentList){
-//                out.write("<td>");
-//                out.write("<p>" + student.getId() + "<p>");
-//                out.write("<td>");
-//                out.write("<td>");
-//                out.write("<p>" + student.getName() + "</p>");
-//                out.write("<td>");
-//                out.write("<td>");
-//                out.write("<p>" + student.getEmail() + "</p>");
-//                out.write("<td>");
-//            }
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-//       try {
-//           String query1 = "Select * from student2";
-//           preparedStatement=connection.prepareStatement(query1);
-//           resultSet = preparedStatement.executeQuery();
-//           while (resultSet.next()){
-//               int id =  resultSet.getInt(1);
-//               String name1 = resultSet.getString(2);
-//               String email1 = resultSet.getString(3);
-//               Student student = new Student(id,name1,email1);
-//               studentList.add(student);
-//           }
-//
-//       } catch (Exception e) {
-//           throw new RuntimeException(e);
-//       }
         //send this list to jsp
         String destination = "/WEB-INF/jsps/student/student-list.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req,resp);
         try {
-            Connectionutil.closeConnection();
+            ConnectionUtil.closeConnection();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

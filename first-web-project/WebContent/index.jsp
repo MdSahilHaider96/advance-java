@@ -17,8 +17,15 @@
               <a href="/first-web-project/form"> Form Servlet </a>
           </div>
           <div>
-              <a href="/first-web-project/studentRegisteration"> Student Servlet </a>
+              <a href="/first-web-project/studentRegisteration"> Student </a>
           </div>
+          <div>
+              <a href="/first-web-project/studentList"> Students Servlet </a>
+          </div>
+         <div>
+              <a href="/first-web-project/teachers-list"> Teachers List </a>
+         </div>
+
 
 	</body>
 </html>

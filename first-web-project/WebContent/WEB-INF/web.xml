@@ -8,6 +8,66 @@
 
 
   <servlet>
+    <servlet-name> Create Teachers </servlet-name>
+    <servlet-class>org.first.controller.TeacherCreate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Create Teachers </servlet-name>
+    <url-pattern>/create-teachers</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Teachers Details </servlet-name>
+    <servlet-class>org.first.controller.TeachersDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Teachers Details </servlet-name>
+    <url-pattern>/teachers-details</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TeachersList</servlet-name>
+    <servlet-class>org.first.controller.TeachersList</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TeachersList</servlet-name>
+    <url-pattern>/teachers-list</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>StudentsList</servlet-name>
+    <servlet-class>org.first.web.studentManagement.Controller.StudentController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>StudentsList</servlet-name>
+    <url-pattern>/studentList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CreateStudent </servlet-name>
+    <servlet-class>org.first.web.studentManagement.Controller.CreateStudent</servlet-class>
+  </servlet>>
+  <servlet-mapping>
+    <servlet-name>CreateStudent</servlet-name>
+    <url-pattern>/create-student</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>studentReg</servlet-name>
+    <servlet-class>org.first.web.student.StudentController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>studentReg</servlet-name>
+    <url-pattern>/studentRegisteration</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>FirstServlet</servlet-name>
     <servlet-class>org.first.web.FirstServlet</servlet-class>
   </servlet>
@@ -47,15 +107,5 @@
     <url-pattern>/form</url-pattern>
   </servlet-mapping>
 
-
-  <servlet>
-    <servlet-name>studentReg</servlet-name>
-    <servlet-class>org.first.web.student.StudentController</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>studentReg</servlet-name>
-    <url-pattern>/studentRegisteration</url-pattern>
-  </servlet-mapping>
 
 </web-app>
