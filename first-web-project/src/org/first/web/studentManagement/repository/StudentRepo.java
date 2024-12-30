@@ -98,4 +98,50 @@ public class StudentRepo {
             ConnectionUtil.closeConnection();
         }
     }
+    public static Student findById(int id) throws Exception{
+        connection = ConnectionUtil.openConnection();
+         PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Student student = null;
+        try {
+            String query = "SELECT * FROM student3 WHERE id=?";
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1,id);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                String firstName = resultSet.getString(2);
+                String middleName = resultSet.getString(3);
+                String surName = resultSet.getString(4);
+                String email = resultSet.getString(5);
+                int age = resultSet.getInt(6);
+                String gender = resultSet.getString(7);
+                int rollNo = resultSet.getInt(8);
+                int standard = resultSet.getInt(9);
+                String fatherName = resultSet.getString(10);
+                String schoolName = resultSet.getString(11);
+                student = new Student(id, firstName, middleName, surName, email, age, gender, rollNo, standard, fatherName, schoolName);
+            }
+            return student;
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            try{
+                if (preparedStatement != null){
+                    preparedStatement.close();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                if (resultSet != null){
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            ConnectionUtil.closeConnection();
+        }
+    }
 }

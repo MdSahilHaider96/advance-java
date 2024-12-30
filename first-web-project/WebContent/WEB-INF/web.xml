@@ -47,6 +47,17 @@
     <url-pattern>/studentList</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>studentDetails</servlet-name>
+    <servlet-class>org.first.web.studentManagement.Controller.StudentDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>studentDetails</servlet-name>
+    <url-pattern>/studentDetails</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>CreateStudent </servlet-name>
     <servlet-class>org.first.web.studentManagement.Controller.CreateStudent</servlet-class>

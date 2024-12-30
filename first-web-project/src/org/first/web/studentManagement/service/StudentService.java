@@ -12,4 +12,7 @@ public class StudentService {
     public List<Student> findAll() throws Exception{
         return StudentRepo.findAll();
     }
+    public Student findById(int id) throws Exception{
+        return StudentRepo.findById(id);
+    }
 }

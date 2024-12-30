@@ -58,7 +58,7 @@
                                 <td><%= teachers.getGender() %></td>
                                 <td><%= teachers.getSpecialisation() %></td>
                                 <td><%= teachers.getSchoolName() %></td>
-                                <td>   <a href="teachers-details?id=<%= teachers.getId() %>" class="button"> Details </a> </td>
+                                 <td>   <a href="teachers-details?id=<%= teachers.getId() %>" class="button"> Details </a> </td>
                             </tr>
                         <%
                     }

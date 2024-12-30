@@ -4,7 +4,7 @@
         	<meta charset="ISO-8859-1">
         	<title>INDEX</title>
         <%@ page import= "org.first.web.studentManagement.Model.Student" %>
-        <%@ page import="java.util.List" %>
+          <%@ page import="java.util.List" %>
         <style>
             table, th, td {
               border: 1px solid black;
@@ -61,6 +61,7 @@
                                 <td><%= student.getStandard() %></td>
                                 <td><%= student.getFatherName() %></td>
                                 <td><%= student.getSchoolName() %></td>
+                                 <td>   <a href="studentDetails?id=<%= student.getId() %>" class="button"> Details </a> </td>
                             </tr>
 
                         <%

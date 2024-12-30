@@ -15,7 +15,7 @@
         </style>
     </head>
  <body>
-<h1> TEACHER REGISTERATION <h1>
+<h1> STUDENT REGISTERATION <h1>
     <form action="create-student" method="POST">
 		  <label for="firstName">First Name:</label><br>
 		  <input type="text" name="firstName"><br>

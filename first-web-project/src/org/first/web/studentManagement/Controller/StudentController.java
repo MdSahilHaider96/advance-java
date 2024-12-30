@@ -32,7 +32,6 @@ public class StudentController extends HttpServlet {
         }
         try{
             List<Student> studentList = studentService.findAll();
-            System.out.println(studentList);
             req.setAttribute("studentList" , studentList);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -72,7 +71,6 @@ public class StudentController extends HttpServlet {
 
         try{
             List<Student> studentList = studentService.findAll();
-            System.out.println(studentList);
             req.setAttribute("studentList" , studentList);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -80,11 +78,13 @@ public class StudentController extends HttpServlet {
         String destination = "/WEB-INF/jsps/student-management/student-list.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req,resp);
+
         try {
             ConnectionUtil.closeConnection();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
         // Create
 
     }

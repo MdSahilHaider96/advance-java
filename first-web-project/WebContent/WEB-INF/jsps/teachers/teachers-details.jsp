@@ -18,9 +18,10 @@
          </style>
         </head>
             <body>
-             <form action="teachers-details" method="POST">
+             <form action="teachers-details" method="GET">
                 <h1>Teachers Details </h1>
-                    <% Teachers teachers = (Teachers)request.getAttribute("teachersDetails");
+                    <%
+                    Teachers teachers = (Teachers)request.getAttribute("teachersDetails");
                     %>
                      <div>
                         id : <%= teachers.getId() %>
