@@ -1,6 +1,7 @@
 package org.first.repository;
 
 import jakarta.servlet.ServletContext;
+import org.first.model.Store;
 import org.first.model.Student;
 import org.first.sql.util.ConnectionUtil;
 

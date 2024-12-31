@@ -1,11 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<web-app> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>first-web-project</display-name>
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
+
+  <servlet>
+    <servlet-name> Store Management </servlet-name>
+    <servlet-class>org.first.controller.StoreManagement</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Store Management </servlet-name>
+    <url-pattern>/storeManagement</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Store Create </servlet-name>
+    <servlet-class>org.first.controller.StoreCreate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Store Create </servlet-name>
+    <url-pattern>/storeCreate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Store List </servlet-name>
+    <servlet-class>org.first.controller.StoreList</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Store List </servlet-name>
+    <url-pattern>/StoreList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Store Details </servlet-name>
+    <servlet-class>org.first.controller.StoreDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Store Details </servlet-name>
+    <url-pattern>/storeDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Store Update </servlet-name>
+    <servlet-class>org.first.controller.StoreUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Store Update </servlet-name>
+    <url-pattern>/storeUpdate</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name> Create Teachers </servlet-name>

@@ -25,6 +25,9 @@
          <div>
               <a href="/first-web-project/teachers-list"> Teachers List </a>
          </div>
+         <div>
+               <a href="/first-web-project/storeManagement"> Store Management  </a>
+        </div>
 
 
 	</body>

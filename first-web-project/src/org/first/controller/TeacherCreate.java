@@ -47,7 +47,7 @@ public class TeacherCreate extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String destination = "/first-web-project/teachers-list";
+        String destination = "first-web-project/teachers-list";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         resp.sendRedirect(destination);
         try {
