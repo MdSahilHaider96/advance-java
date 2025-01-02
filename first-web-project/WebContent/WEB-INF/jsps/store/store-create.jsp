@@ -32,7 +32,7 @@
 		     <input type="text" name="totalBill">
 		   </div>
 		   <div>
-               <a href="/first-web-project/StoreList" class=" List "> List </a>
+               <a href="/first-web-project/storeList" class=" List "> List </a>
            </div>
 
 		  <input type="submit" value="Submit">

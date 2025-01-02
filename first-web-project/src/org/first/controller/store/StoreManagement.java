@@ -1,4 +1,4 @@
-package org.first.controller;
+package org.first.controller.store;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

@@ -7,28 +7,15 @@
 
 		<h2>Index</h2>
 
-		  <div>
-		  <a href="second.jsp">Second Servlet</a>
-		  </div>
-		  <div>
-		       <a href="third.jsp">Third Servlet </a>
-		  </div>
-		  <div>
-              <a href="/first-web-project/form"> Form Servlet </a>
-          </div>
           <div>
-              <a href="/first-web-project/studentRegisteration"> Student </a>
-          </div>
-          <div>
-              <a href="/first-web-project/studentList"> Students Servlet </a>
+              <a href="/first-web-project/studentList"> Students Management  </a>
           </div>
          <div>
-              <a href="/first-web-project/teachers-list"> Teachers List </a>
+              <a href="/first-web-project/teachers-list"> Teachers Management </a>
          </div>
          <div>
                <a href="/first-web-project/storeManagement"> Store Management  </a>
         </div>
-
 
 	</body>
 </html>

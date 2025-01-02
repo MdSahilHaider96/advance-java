@@ -59,6 +59,8 @@
                                 <td><%= teachers.getSpecialisation() %></td>
                                 <td><%= teachers.getSchoolName() %></td>
                                  <td>   <a href="teachers-details?id=<%= teachers.getId() %>" class="button"> Details </a> </td>
+                                 <td><a href="teachersUpdate?id=<%= teachers.getId() %>" class="button"> Update </a></td>
+                                 <td><a href="teachersDelete?id=<%= teachers.getId() %>" class="button"> Delete </a></td>
                             </tr>
                         <%
                     }

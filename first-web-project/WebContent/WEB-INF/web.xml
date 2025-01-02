@@ -9,7 +9,7 @@
 
   <servlet>
     <servlet-name> Store Management </servlet-name>
-    <servlet-class>org.first.controller.StoreManagement</servlet-class>
+    <servlet-class>org.first.controller.store.StoreManagement</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -19,7 +19,7 @@
 
   <servlet>
     <servlet-name> Store Create </servlet-name>
-    <servlet-class>org.first.controller.StoreCreate</servlet-class>
+    <servlet-class>org.first.controller.store.StoreCreate</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -29,17 +29,17 @@
 
   <servlet>
     <servlet-name> Store List </servlet-name>
-    <servlet-class>org.first.controller.StoreList</servlet-class>
+    <servlet-class>org.first.controller.store.StoreList</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name> Store List </servlet-name>
-    <url-pattern>/StoreList</url-pattern>
+    <url-pattern>/storeList</url-pattern>
   </servlet-mapping>
 
   <servlet>
     <servlet-name> Store Details </servlet-name>
-    <servlet-class>org.first.controller.StoreDetails</servlet-class>
+    <servlet-class>org.first.controller.store.StoreDetails</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -49,7 +49,7 @@
 
   <servlet>
     <servlet-name> Store Update </servlet-name>
-    <servlet-class>org.first.controller.StoreUpdate</servlet-class>
+    <servlet-class>org.first.controller.store.StoreUpdate</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -58,8 +58,18 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name> Store Delete </servlet-name>
+    <servlet-class>org.first.controller.store.StoreDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Store Delete </servlet-name>
+    <url-pattern>/storeDelete</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name> Create Teachers </servlet-name>
-    <servlet-class>org.first.controller.TeacherCreate</servlet-class>
+    <servlet-class>org.first.controller.teacher.TeacherCreate</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -69,7 +79,7 @@
 
   <servlet>
     <servlet-name> Teachers Details </servlet-name>
-    <servlet-class>org.first.controller.TeachersDetails</servlet-class>
+    <servlet-class>org.first.controller.teacher.TeachersDetails</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -79,12 +89,32 @@
 
   <servlet>
     <servlet-name>TeachersList</servlet-name>
-    <servlet-class>org.first.controller.TeachersList</servlet-class>
+    <servlet-class>org.first.controller.teacher.TeachersList</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>TeachersList</servlet-name>
     <url-pattern>/teachers-list</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TeachersUpdate</servlet-name>
+    <servlet-class>org.first.controller.teacher.TeachersUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TeachersUpdate</servlet-name>
+    <url-pattern>/teachersUpdate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TeachersDelete</servlet-name>
+    <servlet-class>org.first.controller.teacher.TeachersDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TeachersDelete</servlet-name>
+    <url-pattern>/teachersDelete</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -97,6 +127,15 @@
     <url-pattern>/studentList</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>StudentsUpdate</servlet-name>
+    <servlet-class>org.first.web.studentManagement.Controller.StudentUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>StudentsUpdate</servlet-name>
+    <url-pattern>/studentsUpdate</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>studentDetails</servlet-name>
@@ -106,6 +145,16 @@
   <servlet-mapping>
     <servlet-name>studentDetails</servlet-name>
     <url-pattern>/studentDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>studentDelete</servlet-name>
+    <servlet-class>org.first.web.studentManagement.Controller.StudentDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>studentDelete</servlet-name>
+    <url-pattern>/studentsDelete</url-pattern>
   </servlet-mapping>
 
   <servlet>

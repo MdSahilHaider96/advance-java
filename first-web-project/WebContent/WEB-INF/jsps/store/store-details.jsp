@@ -34,7 +34,7 @@
 
                      </div>
                      <div>
-                         <a href="/first-web-project/StoreList" class=" List "> List </a>
+                         <a href="/first-web-project/storeList" class=" List "> List </a>
                      </div>
                      <div>
                           <a href="/first-web-project/storeCreate" class=" Create "> Create </a>

@@ -1,4 +1,4 @@
-package org.first.controller;
+package org.first.controller.store;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,7 +11,6 @@ import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StoreList extends HttpServlet {

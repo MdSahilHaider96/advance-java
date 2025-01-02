@@ -61,9 +61,10 @@
                                 <td><%= student.getStandard() %></td>
                                 <td><%= student.getFatherName() %></td>
                                 <td><%= student.getSchoolName() %></td>
-                                 <td>   <a href="studentDetails?id=<%= student.getId() %>" class="button"> Details </a> </td>
+                                 <td><a href="studentDetails?id=<%= student.getId() %>" class="button"> Details </a> </td>
+                                 <td><a href="studentsUpdate?id=<%= student.getId() %>" class="button"> Update </a></td>
+                                 <td><a href="studentsDelete?id=<%= student.getId() %>" class="button"> Delete </a></td>
                             </tr>
-
                         <%
                     }
                     %>

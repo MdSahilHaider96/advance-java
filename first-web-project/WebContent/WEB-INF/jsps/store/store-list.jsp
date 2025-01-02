@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-    <form action="StoreList" method="GET">
+    <form action="storeList" method="GET">
         <h1>Store List</h1>
             <%
                 List<Store> storeList = (List<Store>)request.getAttribute("storeList");
@@ -37,8 +37,10 @@
                                 <td><%= store.getAddress() %></td>
                                 <td><%= store.getPhnNo() %></td>
                                 <td><%= store.getTotalBill() %></td>
-                                <td>   <a href="storeDetails?id=<%= store.getId() %>" class="button"> Details </a> </td>
-                                <td>   <a href="storeUpdate?id=<%= store.getId() %>" class="button"> Update </a> </td>
+                                <td><a href="storeDetails?id=<%= store.getId() %>" class="button"> Details </a></td>
+                                <td><a href="storeUpdate?id=<%= store.getId() %>" class="button"> Update </a></td>
+                                <td><a href="storeDelete?id=<%= store.getId() %>" class="button"> Delete </a></td>
+
                             </tr>
                         <%
                     }

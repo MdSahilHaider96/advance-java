@@ -142,4 +142,63 @@ public class TeachersRepo {
         }
         return teachers;
     }
+    // firstName , middleName , surName ,  emailId , age , gender , specialisation , schoolName
+    public static void updateById(int id , String firstName, String middleName , String surName, String emailId, int age, String gender,String specialisation , String schoolName ) throws Exception {
+        connection=ConnectionUtil.openConnection();
+        PreparedStatement preparedStatement=null;
+        // id, firstName, middleName, surName, email, age, gender, rollNo, standard, fatherName, schoolName
+
+        try {
+            String query="UPDATE teachers SET firstName = ? , middleName = ? , surName = ? , emailId = ? , age = ? , gender = ? , specialisation = ? , schoolName = ?  WHERE id=? ";
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1,firstName);
+            preparedStatement.setString(2,middleName);
+            preparedStatement.setString(3,surName);
+            preparedStatement.setString(4,emailId);
+            preparedStatement.setInt(5,age);
+            preparedStatement.setString(6,gender);
+            preparedStatement.setString(7,specialisation);
+            preparedStatement.setString(8,schoolName);
+            preparedStatement.setInt(9,id);
+            int executeUpdate = preparedStatement.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (preparedStatement !=null){
+                    preparedStatement.close();
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        ConnectionUtil.closeConnection();
+    }
+
+    public static void deleteById(int id)throws Exception{
+        connection=ConnectionUtil.openConnection();
+        PreparedStatement preparedStatement=null;
+        try{
+            String query ="DELETE FROM teachers WHERE id=?";
+            preparedStatement=connection.prepareStatement(query);
+            preparedStatement.setInt(1,id);
+            int Delete=preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (preparedStatement != null){
+                    preparedStatement.close();
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        ConnectionUtil.closeConnection();
+    }
 }

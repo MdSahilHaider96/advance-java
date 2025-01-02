@@ -1,18 +1,15 @@
-package org.first.controller;
+package org.first.controller.store;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.first.model.Store;
 import org.first.service.StoreService;
 import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 
 public class StoreCreate extends HttpServlet {
     private static Connection connection;
@@ -44,7 +41,7 @@ public class StoreCreate extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        resp.sendRedirect("/first-web-project/StoreList");
+        resp.sendRedirect("/first-web-project/storeList");
         try {
             ConnectionUtil.closeConnection();
         } catch (Exception e) {

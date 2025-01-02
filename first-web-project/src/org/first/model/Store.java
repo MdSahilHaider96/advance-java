@@ -19,7 +19,7 @@ public class Store {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.email = email; //
         this.address = address;
         this.phnNo = phnNo;
         this.totalBill = totalBill;

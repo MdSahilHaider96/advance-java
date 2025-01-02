@@ -47,7 +47,7 @@ public class StudentRepo {
         ResultSet resultSet=null;
         List<Student> studentList = new ArrayList<>();
         try {
-            String query ="SELECT * FROM Student2";
+            String query ="SELECT * FROM student2";
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -78,6 +78,65 @@ public class StudentRepo {
             ConnectionUtil.closeConnection();
         }
         return studentList;
+    }
+    public static void updateById(int id , String firstName,String middleName , String surName, String email, int age, String gender, int rollNo , int standard ,String fatherName , String schoolName ) throws Exception {
+        connection=ConnectionUtil.openConnection();
+        PreparedStatement preparedStatement=null;
+        // id, firstName, middleName, surName, email, age, gender, rollNo, standard, fatherName, schoolName
 
+        try {
+            String query="UPDATE student3 SET firstName = ? , middleName = ? , surName = ? , email = ? , age = ? , gender = ? , rollNo = ? , standard = ? , fatherName = ? , schoolName = ?   WHERE id=? ";
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1,firstName);
+            preparedStatement.setString(2,middleName);
+            preparedStatement.setString(3,surName);
+            preparedStatement.setString(4,email);
+            preparedStatement.setInt(5,age);
+            preparedStatement.setString(6,gender);
+            preparedStatement.setInt(7,rollNo);
+            preparedStatement.setInt(8,standard);
+            preparedStatement.setString(9,fatherName);
+            preparedStatement.setString(10,schoolName);
+            preparedStatement.setInt(11,id);
+            int executeUpdate = preparedStatement.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (preparedStatement !=null){
+                    preparedStatement.close();
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        ConnectionUtil.closeConnection();
+    }
+
+    public static void deleteById(int id)throws Exception{
+        connection=ConnectionUtil.openConnection();
+        PreparedStatement preparedStatement=null;
+        try{
+            String query ="DELETE FROM student3 WHERE id=?";
+            preparedStatement=connection.prepareStatement(query);
+            preparedStatement.setInt(1,id);
+            int Delete=preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (preparedStatement != null){
+                    preparedStatement.close();
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        ConnectionUtil.closeConnection();
     }
 }

@@ -132,7 +132,7 @@ public class StoreRepo {
             ConnectionUtil.closeConnection();
         }
     }
-    public static void updateById(int id) throws Exception {
+    public static void updateById(int id , String firstName, String lastName, String email, String address, String phnNo, String totalBill) throws Exception {
         connection=ConnectionUtil.openConnection();
         PreparedStatement preparedStatement=null;
         //    // String firstName, String lastName, String email, String address, String phnNo, String totalBill
@@ -140,8 +140,14 @@ public class StoreRepo {
         try {
             String query="UPDATE store SET firstName = ? , lastName = ? , email = ? , address = ? , phnNo = ? , totalBill = ? WHERE id=? ";
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1,id);
-            int executeUpdate= preparedStatement.executeUpdate();
+            preparedStatement.setString(1,firstName);
+            preparedStatement.setString(2,lastName);
+            preparedStatement.setString(3,email);
+            preparedStatement.setString(4,address);
+            preparedStatement.setString(5,phnNo);
+            preparedStatement.setString(6,totalBill);
+            preparedStatement.setInt(7,id);
+            int executeUpdate = preparedStatement.executeUpdate();
         }
         catch (SQLException e){
             e.printStackTrace();

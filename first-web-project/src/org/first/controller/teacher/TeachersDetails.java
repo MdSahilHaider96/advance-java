@@ -1,4 +1,4 @@
-package org.first.controller;
+package org.first.controller.teacher;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,7 +9,6 @@ import org.first.model.Teachers;
 import org.first.service.TeachersService;
 
 import java.io.IOException;
-import java.util.List;
 
 public class TeachersDetails extends HttpServlet {
     @Override

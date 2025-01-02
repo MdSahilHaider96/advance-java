@@ -16,7 +16,10 @@ public class StoreService {
     public Store findById(int id) throws Exception{
         return  StoreRepo.findById(id);
     }
-    public  void updateById(int id) throws Exception{
-        StoreRepo.updateById(id);
+    public void deleteById(int id) throws Exception{
+        StoreRepo.deleteById(id);
+    }
+    public void updateById(int id , String firstName, String lastName, String email, String address, String phnNo, String totalBill) throws Exception{
+        StoreRepo.updateById(id , firstName , lastName ,email , address , phnNo ,totalBill);
     }
 }

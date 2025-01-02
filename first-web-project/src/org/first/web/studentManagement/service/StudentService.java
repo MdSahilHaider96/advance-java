@@ -15,4 +15,10 @@ public class StudentService {
     public Student findById(int id) throws Exception{
         return StudentRepo.findById(id);
     }
+    public  void updateById(int id , String firstName,String middleName , String surName, String email, int age, String gender, int rollNo , int standard ,String fatherName , String schoolName) throws Exception{
+       StudentRepo.updateById(id, firstName, middleName, surName, email, age, gender, rollNo, standard, fatherName, schoolName);
+    }
+    public void deleteById(int id)throws Exception{
+        StudentRepo.deleteById(id);
+    }
 }
