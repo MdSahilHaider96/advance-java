@@ -5,6 +5,105 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name> Company Create </servlet-name>
+    <servlet-class>org.first.controller.company.CompanyCreate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Company Create </servlet-name>
+    <url-pattern>/companyCreate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Company List </servlet-name>
+    <servlet-class>org.first.controller.company.CompanyList</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Company List </servlet-name>
+    <url-pattern>/companyList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Company Update </servlet-name>
+    <servlet-class>org.first.controller.company.CompanyUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Company Update </servlet-name>
+    <url-pattern>/companyUpdate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Company Details </servlet-name>
+    <servlet-class>org.first.controller.company.CompanyDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Company Details </servlet-name>
+    <url-pattern>/companyDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Company Delete </servlet-name>
+    <servlet-class>org.first.controller.company.CompanyDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Company Delete </servlet-name>
+    <url-pattern>/companyDelete</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Employees Create </servlet-name>
+    <servlet-class>org.first.controller.employees.EmployeesCreate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Employees Create </servlet-name>
+    <url-pattern>/employeesCreate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Employees List </servlet-name>
+    <servlet-class>org.first.controller.employees.EmployeesList</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Employees List </servlet-name>
+    <url-pattern>/employeesList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Employees Update </servlet-name>
+    <servlet-class>org.first.controller.employees.EmployeesUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Employees Update </servlet-name>
+    <url-pattern>/employeesUpdate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Employees Details </servlet-name>
+    <servlet-class>org.first.controller.employees.EmployeesDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Employees Details </servlet-name>
+    <url-pattern>/employeesDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Employees Delete </servlet-name>
+    <servlet-class>org.first.controller.employees.EmployeesDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Employees Delete </servlet-name>
+    <url-pattern>/employeesDelete</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name> City Management </servlet-name>

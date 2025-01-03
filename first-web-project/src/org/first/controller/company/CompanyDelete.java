@@ -1,4 +1,4 @@
-package org.first.controller.city;
+package org.first.controller.company;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -6,23 +6,23 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.first.service.CityService;
+import org.first.service.CompanyService;
 
 import java.io.IOException;
 import java.sql.Connection;
 
-public class CityDelete extends HttpServlet {
+public class CompanyDelete extends HttpServlet {
     private static Connection connection;
-    CityService cityService = new CityService();
+    CompanyService companyService = new CompanyService();
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("cityDelete.POST");
         String id = req.getParameter("id");
-        System.out.println("cityDelete.GET "+id);
+        System.out.println("companyDelete.GET");
         try{
-            cityService.deleteById(Integer.parseInt(id));
+            companyService.deleteById(Integer.parseInt(id));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String destination = "/first-web-project/cityList";
+        String destination = "/first-web-project/companyList";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         resp.sendRedirect(destination);
 

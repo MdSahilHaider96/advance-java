@@ -19,6 +19,12 @@
          <div>
             <a href="/first-web-project/cityManagement"> City Management  </a>
          </div>
+         <div>
+               <a href="/first-web-project/employeesCreate"> Employees Management  </a>
+                  </div>
+         <div>
+            <a href="/first-web-project/companyCreate"> Company Management  </a>
+             </div>
 
 	</body>
 </html>
