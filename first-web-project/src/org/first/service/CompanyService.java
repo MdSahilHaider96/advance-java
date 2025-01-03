@@ -1,9 +1,7 @@
 package org.first.service;
 
 import org.first.model.Company;
-import org.first.model.Employees;
 import org.first.repository.CompanyRepo;
-import org.first.repository.EmployeesRepo;
 
 import java.util.List;
 

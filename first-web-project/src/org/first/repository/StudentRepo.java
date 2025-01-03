@@ -1,10 +1,8 @@
 package org.first.repository;
 
-import jakarta.servlet.ServletContext;
-import org.first.model.Store;
+
 import org.first.model.Student;
 import org.first.sql.util.ConnectionUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

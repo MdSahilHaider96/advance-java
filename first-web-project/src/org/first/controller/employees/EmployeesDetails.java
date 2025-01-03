@@ -5,9 +5,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.first.model.City;
 import org.first.model.Employees;
-import org.first.service.CityService;
 import org.first.service.EmployeesService;
 import org.first.sql.util.ConnectionUtil;
 

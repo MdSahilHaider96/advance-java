@@ -1,9 +1,7 @@
 package org.first.service;
 
 import org.first.model.City;
-import org.first.model.Store;
 import org.first.repository.CityRepo;
-import org.first.repository.StoreRepo;
 
 import java.util.List;
 

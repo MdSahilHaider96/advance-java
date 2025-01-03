@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.first.model.Store;
 import org.first.service.StoreService;
 import org.first.sql.util.ConnectionUtil;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

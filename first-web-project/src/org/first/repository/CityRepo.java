@@ -1,9 +1,7 @@
 package org.first.repository;
 
 import org.first.model.City;
-import org.first.model.Teachers;
 import org.first.sql.util.ConnectionUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,20 +1,16 @@
 package org.first.web.student;
 
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.first.model.Student;
-import org.first.repository.StudentRepo;
 import org.first.service.StudentService;
 import org.first.sql.util.ConnectionUtil;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StudentController extends HttpServlet {

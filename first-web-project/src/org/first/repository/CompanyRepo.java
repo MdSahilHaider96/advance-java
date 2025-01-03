@@ -1,9 +1,7 @@
 package org.first.repository;
 
 import org.first.model.Company;
-import org.first.model.Employees;
 import org.first.sql.util.ConnectionUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.first.sql.util.ConnectionUtil.password;
 
 public class CompanyRepo {
     ////id , name , location , totalEmployees , email , contactNo

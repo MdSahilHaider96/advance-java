@@ -1,9 +1,7 @@
 package org.first.service;
 
 import org.first.model.Employees;
-import org.first.model.Store;
 import org.first.repository.EmployeesRepo;
-import org.first.repository.StoreRepo;
 
 import java.util.List;
 
