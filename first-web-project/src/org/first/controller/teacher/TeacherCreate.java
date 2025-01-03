@@ -13,17 +13,14 @@ import java.sql.Connection;
 
 public class TeacherCreate extends HttpServlet {
     private static Connection connection;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String destination = "/WEB-INF/jsps/teachers/create-teachers.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
-        System.out.println("CreateGET");
     }
 
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Post");
         // String firstName, String middleName, String surName, String emailId, int age, int gender, String specialisation, String schoolName
         // Create
         TeachersService teachersService = new TeachersService();
@@ -35,7 +32,6 @@ public class TeacherCreate extends HttpServlet {
         String gender = req.getParameter("gender");
         String specialisation = req.getParameter("specialisation");
         String schoolName = req.getParameter("schoolName");
-        System.out.println("DoPost");
         try {
             connection= ConnectionUtil.openConnection();
         } catch (Exception e) {

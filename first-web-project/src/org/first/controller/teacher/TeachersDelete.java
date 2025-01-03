@@ -13,10 +13,8 @@ import java.io.IOException;
 public class TeachersDelete extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         TeachersService teachersService = new TeachersService();
-        System.out.println("Teachers.Delete.GET");
         String getId = req.getParameter("id");
         int id = Integer.parseInt(getId);
-        System.out.println("teachersDelete.GET "+id);
         try{
             teachersService.deleteById(id);
         } catch (Exception e) {

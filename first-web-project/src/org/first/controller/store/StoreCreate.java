@@ -18,9 +18,7 @@ public class StoreCreate extends HttpServlet {
         String destination = "WEB-INF/jsps/store/store-create.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req , resp);
-        System.out.println("STORE CREATE GET");
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StoreService storeService = new StoreService();
@@ -47,6 +45,5 @@ public class StoreCreate extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }

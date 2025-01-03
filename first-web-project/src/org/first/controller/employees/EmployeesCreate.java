@@ -13,18 +13,14 @@ import java.sql.Connection;
 
 public class EmployeesCreate extends HttpServlet {
     private static Connection connection;
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String destination ="/WEB-INF/jsps/employees/employees-create.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
-        System.out.println("Employees CREATE GET");
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         EmployeesService employeesService = new EmployeesService();
-        //
         try {
             connection = ConnectionUtil.openConnection();
         } catch (Exception e) {

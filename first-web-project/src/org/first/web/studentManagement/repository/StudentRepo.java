@@ -1,6 +1,4 @@
 package org.first.web.studentManagement.repository;
-
-import org.first.sql.util.ConnectionUtil;
 import org.first.sql.util.ConnectionUtil;
 import org.first.web.studentManagement.Model.Student;
 

@@ -6,9 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.first.model.City;
-import org.first.model.Store;
 import org.first.service.CityService;
-import org.first.service.StoreService;
 import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
@@ -25,21 +23,17 @@ public class CityDetails extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         String id = req.getParameter("id");
         int getId = Integer.parseInt(id);
-        System.out.println(getId);
         try {
             city = cityService.findById(getId);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         req.setAttribute("cityDetails" , city);
         String destination = "/WEB-INF/jsps/city/city-details.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req , resp);
-
         try {
             ConnectionUtil.closeConnection();
         } catch (Exception e) {

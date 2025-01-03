@@ -6,9 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.first.model.City;
-import org.first.model.Store;
 import org.first.service.CityService;
-import org.first.service.StoreService;
 import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;

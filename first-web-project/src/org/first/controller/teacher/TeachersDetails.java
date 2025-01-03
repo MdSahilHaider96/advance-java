@@ -14,7 +14,6 @@ public class TeachersDetails extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
          TeachersService teachersService = new TeachersService();
-
          String  id = req.getParameter("id");
          int teacherid = Integer.parseInt(id);
         Teachers teachers = null;
@@ -24,7 +23,6 @@ public class TeachersDetails extends HttpServlet {
             throw new RuntimeException(e);
         }
         req.setAttribute("teachersDetails" , teachers);
-        System.out.println(teachers);
         String destination = "WEB-INF/jsps/teachers/teachers-details.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req , resp);

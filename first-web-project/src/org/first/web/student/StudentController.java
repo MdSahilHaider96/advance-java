@@ -19,15 +19,12 @@ public class StudentController extends HttpServlet {
     private static Connection connection;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("DoGET");
         String destination = "/WEB-INF/jsps/student/student-registration.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req,resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        System.out.println("DoPost");
         Statement st;
         PrintWriter out = resp.getWriter();
         String name = req.getParameter("name");
@@ -47,12 +44,6 @@ public class StudentController extends HttpServlet {
             preparedStatement.setString(1,name);
             preparedStatement.setString(2,email);
             int executeUpdate = preparedStatement.executeUpdate();
-            if (executeUpdate > 0){
-                System.out.println("CREATED SUCCESSFULLY");
-            }
-            else {
-                System.out.println("FAILED TO CREATE");
-            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -71,14 +62,11 @@ public class StudentController extends HttpServlet {
         //fetch all student from db - list of students
         try {
             List<Student> studentList = studentService.findAll();
-            System.out.println(studentList);
-
             req.setAttribute("studentList",studentList);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         //send this list to jsp
         String destination = "/WEB-INF/jsps/student/student-list.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);

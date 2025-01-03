@@ -14,9 +14,7 @@ public class EmployeesDelete extends HttpServlet {
     private static Connection connection;
     EmployeesService employeesService = new EmployeesService();
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("EmployeesDelete.POST");
         String id = req.getParameter("id");
-        System.out.println("EmmployeesDelete.GET "+id);
         try{
             employeesService.deleteById(Integer.parseInt(id));
         } catch (Exception e) {

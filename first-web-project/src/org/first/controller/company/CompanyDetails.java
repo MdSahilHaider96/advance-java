@@ -26,13 +26,11 @@ public class CompanyDetails extends HttpServlet {
 
         String id = req.getParameter("id");
         int getId = Integer.parseInt(id);
-        System.out.println(getId);
         try {
             company = companyService.findById(getId);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         req.setAttribute("companyDetails" , company);
         String destination = "/WEB-INF/jsps/company/company-details.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
@@ -43,6 +41,5 @@ public class CompanyDetails extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }

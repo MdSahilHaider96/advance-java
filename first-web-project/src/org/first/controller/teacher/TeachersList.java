@@ -16,7 +16,6 @@ public class TeachersList extends HttpServlet {
     private static Connection connection;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("TeacherList.doGet");
         TeachersService teachersService = new TeachersService();
         try{
             ConnectionUtil.openConnection();
@@ -34,7 +33,6 @@ public class TeachersList extends HttpServlet {
         requestDispatcher.forward(req , resp );
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Post");
         // Create
         TeachersService teachersService = new TeachersService();
         String firstName = req.getParameter("firstName");
@@ -45,7 +43,6 @@ public class TeachersList extends HttpServlet {
         String gender = req.getParameter("gender");
         String specialisation = req.getParameter("specialisation");
         String schoolName = req.getParameter("schoolName");
-        System.out.println("DoPost");
         try {
             connection= ConnectionUtil.openConnection();
         } catch (Exception e) {
@@ -59,7 +56,6 @@ public class TeachersList extends HttpServlet {
         try{
             List<Teachers> teachersList = teachersService.findAll();
             teachersList.forEach(System.out::println);
-            System.out.println(teachersList);
             req.setAttribute("teachersList" , teachersList);
         } catch (Exception e) {
             throw new RuntimeException(e);

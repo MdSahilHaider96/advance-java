@@ -19,7 +19,6 @@ public class CompanyUpdate extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CompanyService companyService = new CompanyService();
         Company company = null;
-        System.out.println("companyUpdate.GET");
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         try {
@@ -32,10 +31,8 @@ public class CompanyUpdate extends HttpServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("COMPANY UPDATE POST");
         CompanyService companyService = new CompanyService();
         PreparedStatement preparedStatement = null;
         try {
@@ -44,7 +41,6 @@ public class CompanyUpdate extends HttpServlet {
             throw new RuntimeException(e);
         }
         //id , name , location , totalEmployees , email ,  contactNo
-
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         String name = req.getParameter("name");

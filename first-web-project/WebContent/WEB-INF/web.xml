@@ -5,6 +5,57 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
+  <servlet>
+    <servlet-name> Car Create </servlet-name>
+    <servlet-class>org.first.controller.car.CarCreate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Car Create </servlet-name>
+    <url-pattern>/carCreate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Car List </servlet-name>
+    <servlet-class>org.first.controller.car.CarList</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Car List </servlet-name>
+    <url-pattern>/carList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Car Update </servlet-name>
+    <servlet-class>org.first.controller.car.CarUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Car Update </servlet-name>
+    <url-pattern>/carUpdate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Car Details </servlet-name>
+    <servlet-class>org.first.controller.car.CarDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Car Details </servlet-name>
+    <url-pattern>/carDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Car Delete </servlet-name>
+    <servlet-class>org.first.controller.car.CarDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Car Delete </servlet-name>
+    <url-pattern>/carDelete</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name> Company Create </servlet-name>
     <servlet-class>org.first.controller.company.CompanyCreate</servlet-class>
@@ -53,6 +104,56 @@
   <servlet-mapping>
     <servlet-name> Company Delete </servlet-name>
     <url-pattern>/companyDelete</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Community Create </servlet-name>
+    <servlet-class>org.first.controller.community.CommunityCreate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Community Create </servlet-name>
+    <url-pattern>/communityCreate</url-pattern>
+  </servlet-mapping>
+  <servlet>
+
+    <servlet-name> Community List </servlet-name>
+    <servlet-class>org.first.controller.community.CommunityList</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Community List </servlet-name>
+    <url-pattern>/communityList</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name> Community Update </servlet-name>
+  <servlet-class>org.first.controller.community.CommunityUpdate</servlet-class>
+  </servlet>
+
+   <servlet-mapping>
+    <servlet-name> Community Update </servlet-name>
+    <url-pattern>/communityUpdate</url-pattern>
+   </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Community Delete </servlet-name>
+    <servlet-class>org.first.controller.community.CommunityDelete</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Community Delete </servlet-name>
+    <url-pattern>/communityDelete</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name> Community Details </servlet-name>
+    <servlet-class>org.first.controller.community.CommunityDetails</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name> Community Details </servlet-name>
+    <url-pattern>/communityDetails</url-pattern>
   </servlet-mapping>
 
   <servlet>

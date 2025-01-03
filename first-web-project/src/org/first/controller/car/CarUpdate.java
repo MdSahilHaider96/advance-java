@@ -1,60 +1,61 @@
-package org.first.controller.store;
+package org.first.controller.car;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.first.model.Store;
-import org.first.service.StoreService;
+import org.first.model.Car;
+import org.first.service.CarService;
 import org.first.sql.util.ConnectionUtil;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class StoreUpdate extends HttpServlet {
+public class CarUpdate extends HttpServlet {
     private static Connection connection;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StoreService  storeService = new StoreService();
-        Store store = null;
+        CarService carService = new CarService();
+        Car car = null;
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         try {
-           store =   storeService.findById(id);
-           req.setAttribute("store" , store);
+            car =   carService.findById(id);
+            req.setAttribute("car" , car);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String destination = "/WEB-INF/jsps/store/store-update.jsp";
+        String destination = "/WEB-INF/jsps/car/car-update.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StoreService storeService = new StoreService();
+        CarService carService = new CarService();
         PreparedStatement preparedStatement = null;
         try {
             connection = ConnectionUtil.openConnection();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //    // String firstName, String lastName, String email, String address, String phnNo, String totalBill
+//    //car ( id, model, company, engine, color, type )
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
-        String firstName = req.getParameter("firstName");
-        String lastName = req.getParameter("lastName");
-        String email = req.getParameter("email");
-        String address = req.getParameter("address");
-        String phnNo = req.getParameter("phnNo");
-        String totalBill = req.getParameter("totalBill");
+        String model = req.getParameter("model");
+        String company = req.getParameter("company");
+        String engine = req.getParameter("engine");
+        String color = req.getParameter("color");
+        String type = req.getParameter("type");
         try {
-            storeService.updateById(id , firstName ,lastName , email , address , phnNo , totalBill);
+            carService.updateById(id , model , company , engine , color , type);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String destination = "/first-web-project/storeList";
+        String destination = "/first-web-project/carList";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         resp.sendRedirect(destination);
-   }
+    }
 }
+

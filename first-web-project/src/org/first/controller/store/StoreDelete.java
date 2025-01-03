@@ -13,9 +13,7 @@ public class StoreDelete extends HttpServlet {
     private static Connection connection;
     StoreService storeService = new StoreService();
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("storeDelete.POST");
         String id = req.getParameter("id");
-        System.out.println("storeDelete.GET "+id);
         try{
             storeService.deleteById(Integer.parseInt(id));
         } catch (Exception e) {
@@ -24,6 +22,5 @@ public class StoreDelete extends HttpServlet {
         String destination = "/first-web-project/storeList";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         resp.sendRedirect(destination);
-
     }
 }

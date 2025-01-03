@@ -20,7 +20,6 @@ public class TeachersUpdate extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         TeachersService teachersService = new TeachersService();
         Teachers teachers = null;
-        System.out.println("TeachersUpdate.GET");
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         try {
@@ -33,10 +32,8 @@ public class TeachersUpdate extends HttpServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("TEACHERS UPDATE POST");
         TeachersService teachersService = new TeachersService();
         PreparedStatement preparedStatement = null;
         try {
@@ -55,15 +52,6 @@ public class TeachersUpdate extends HttpServlet {
         String gender = req.getParameter("gender");
         String specialisation = req.getParameter("specialisation");
         String schoolName = req.getParameter("schoolName");
-        System.out.println(idString);
-        System.out.println(firstName);
-        System.out.println(middleName);
-        System.out.println(surName);
-        System.out.println(emailId );
-        System.out.println(age);
-        System.out.println(gender);
-        System.out.println(specialisation);
-        System.out.println(schoolName);
         try {
             teachersService.updateById(id , firstName , middleName , surName , emailId  , age , gender , specialisation , schoolName ) ;
         } catch (Exception e) {

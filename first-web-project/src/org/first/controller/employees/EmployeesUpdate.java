@@ -19,7 +19,6 @@ public class EmployeesUpdate extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         EmployeesService employeesService = new EmployeesService();
         Employees employees = null;
-        System.out.println("EmployeesUpdate.GET");
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         try {
@@ -32,10 +31,8 @@ public class EmployeesUpdate extends HttpServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("EMPLOYEES UPDATE POST");
         EmployeesService employeesService = new EmployeesService();
         PreparedStatement preparedStatement = null;
         try {

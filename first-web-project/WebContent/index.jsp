@@ -26,5 +26,11 @@
             <a href="/first-web-project/companyCreate"> Company Management  </a>
              </div>
 
+              <div>
+                 <a href="/first-web-project/communityCreate"> Community Management  </a>
+                </div>
+                   <div>
+                 <a href="/first-web-project/carCreate"> Car Management  </a>
+                </div>
 	</body>
 </html>

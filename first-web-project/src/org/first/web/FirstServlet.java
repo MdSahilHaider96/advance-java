@@ -15,9 +15,6 @@ public class FirstServlet extends HttpServlet  {
         String lname = request.getParameter("lname");
         String destination = "/WEB-INF/jsps/result.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(destination);
-
         requestDispatcher.forward(request, response);
-
-        //response.getWriter().append("Served at: ").append(request.getContextPath());
     }
 }

@@ -1,23 +1,23 @@
-package org.first.controller.employees;
+package org.first.controller.community;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.first.model.Employees;
-import org.first.service.EmployeesService;
+import org.first.model.Community;
+import org.first.service.CommunityService;
 import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
 import java.sql.Connection;
 
-public class EmployeesDetails extends HttpServlet {
+public class CommunityDetails extends HttpServlet {
     private static Connection connection;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        EmployeesService employeesService = new EmployeesService();
-        Employees employees = null;
+        CommunityService communityService = new CommunityService();
+        Community community = null;
         try {
             connection = ConnectionUtil.openConnection();
         } catch (Exception e) {
@@ -26,12 +26,12 @@ public class EmployeesDetails extends HttpServlet {
         String id = req.getParameter("id");
         int getId = Integer.parseInt(id);
         try {
-            employees = employeesService.findById(getId);
+            community = communityService.findById(getId);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        req.setAttribute("employeesDetails" , employees);
-        String destination = "/WEB-INF/jsps/employees/employees-details.jsp";
+        req.setAttribute("communityDetails" , community);
+        String destination = "/WEB-INF/jsps/community/community-details.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req , resp);
         try {
@@ -39,6 +39,5 @@ public class EmployeesDetails extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }

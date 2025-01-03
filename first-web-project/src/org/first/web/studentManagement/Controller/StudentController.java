@@ -21,7 +21,6 @@ public class StudentController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("StudentController.doGet");
         StudentService studentService = new StudentService();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -44,7 +43,6 @@ public class StudentController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Post");
         // Create
         StudentService studentService = new StudentService();
         String firstName = req.getParameter("firstName");
@@ -57,7 +55,6 @@ public class StudentController extends HttpServlet {
         int standard = Integer.parseInt(req.getParameter("standard"));
         String fatherName = req.getParameter("fatherName");
         String schoolName = req.getParameter("schoolName");
-        System.out.println("DoPost");
         try {
               connection= ConnectionUtil.openConnection();
         } catch (Exception e) {

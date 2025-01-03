@@ -1,60 +1,61 @@
-package org.first.controller.store;
+package org.first.controller.community;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.first.model.Store;
-import org.first.service.StoreService;
+import org.first.model.Community;
+import org.first.service.CommunityService;
 import org.first.sql.util.ConnectionUtil;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class StoreUpdate extends HttpServlet {
+public class CommunityUpdate extends HttpServlet {
     private static Connection connection;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StoreService  storeService = new StoreService();
-        Store store = null;
+        CommunityService communityService = new CommunityService();
+        Community community = null;
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         try {
-           store =   storeService.findById(id);
-           req.setAttribute("store" , store);
+            community =   communityService.findById(id);
+            req.setAttribute("community" , community);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String destination = "/WEB-INF/jsps/store/store-update.jsp";
+        String destination = "/WEB-INF/jsps/community/community-update.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req, resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StoreService storeService = new StoreService();
+        CommunityService communityService = new CommunityService();
         PreparedStatement preparedStatement = null;
         try {
             connection = ConnectionUtil.openConnection();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        //    // String firstName, String lastName, String email, String address, String phnNo, String totalBill
+        //    // String name , String state , int pinCode
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
-        String email = req.getParameter("email");
         String address = req.getParameter("address");
-        String phnNo = req.getParameter("phnNo");
-        String totalBill = req.getParameter("totalBill");
+        String gender = req.getParameter("gender");
+        String contactNo = req.getParameter("contactNo");
         try {
-            storeService.updateById(id , firstName ,lastName , email , address , phnNo , totalBill);
+            communityService.updateById(id , firstName , lastName , address , gender , contactNo);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String destination = "/first-web-project/storeList";
+        String destination = "/first-web-project/communityList";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         resp.sendRedirect(destination);
-   }
+    }
 }
+

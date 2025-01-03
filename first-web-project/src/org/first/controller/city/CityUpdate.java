@@ -6,9 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.first.model.City;
-import org.first.model.Store;
 import org.first.service.CityService;
-import org.first.service.StoreService;
 import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
@@ -21,7 +19,6 @@ public class CityUpdate extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CityService cityService = new CityService();
         City city = null;
-        System.out.println("CityUpdate.GET");
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         try {
@@ -37,7 +34,6 @@ public class CityUpdate extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("CITY UPDATE POST");
         CityService cityService = new CityService();
         PreparedStatement preparedStatement = null;
         try {
@@ -51,8 +47,6 @@ public class CityUpdate extends HttpServlet {
         String name = req.getParameter("name");
         String state = req.getParameter("state");
         int pinCode = Integer.parseInt(req.getParameter("pinCode"));
-        System.out.println(idString);
-
         try {
             cityService.updateById(id , name , state , pinCode);
         } catch (Exception e) {

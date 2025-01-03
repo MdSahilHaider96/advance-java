@@ -22,26 +22,21 @@ public class StoreDetails extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         String id = req.getParameter("id");
         int getId = Integer.parseInt(id);
-        System.out.println(getId);
         try {
             store = storeService.findById(getId);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
         req.setAttribute("storeDetails",store);
         String destination = "/WEB-INF/jsps/store/store-details.jsp";
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(destination);
         requestDispatcher.forward(req , resp);
-
         try {
             ConnectionUtil.closeConnection();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }
