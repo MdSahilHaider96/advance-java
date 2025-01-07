@@ -258,7 +258,7 @@
 
   <servlet>
     <servlet-name> City Management </servlet-name>
-    <servlet-class>org.first.controller.city.CityCreate</servlet-class>
+    <servlet-class>org.first.controller.city.CityList</servlet-class>
   </servlet>
 
   <servlet-mapping>
