@@ -49,6 +49,9 @@
             <div>
                  <a href="/first-web-project/user2Create" class=" Create "> Create </a>
            </div>
+           <div>
+              <a href="/first-web-project/" class="button">Index</a>
+           </div>
     </body>
 </html>
 

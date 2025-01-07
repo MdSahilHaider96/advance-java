@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.first.common.util.Constants;
+import org.first.common.util.JavaUtil;
 import org.first.model.Employees;
 import org.first.service.EmployeesService;
 import org.first.sql.util.ConnectionUtil;
@@ -44,12 +46,26 @@ public class EmployeesUpdate extends HttpServlet {
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         String firstName = req.getParameter("firstName");
+        boolean isfNameValid = JavaUtil.validateField(Constants.NAME_REGEX, firstName);
+        if (!isfNameValid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/employees/employees-update.jsp");
+            return;
+        }
         String lastName = req.getParameter("lastName");
+        boolean isLNameValid = JavaUtil.validateField(Constants.NAME_REGEX, lastName);
+        if (!isLNameValid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/employees/employees-update.jsp");
+            return;
+        }
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
         String address = req.getParameter("address");
         String contactNo = req.getParameter("contactNo");
-
+        boolean isNumberValid = JavaUtil.validateField(Constants.NAME_REGEX, contactNo);
+        if (!isNumberValid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/employees/employees-update.jsp");
+            return;
+        }
         try {
             employeesService.updateById(id , firstName , lastName , userName , password , address , contactNo);
         } catch (Exception e) {

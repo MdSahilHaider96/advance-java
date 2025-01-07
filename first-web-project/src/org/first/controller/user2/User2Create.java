@@ -11,6 +11,8 @@ import org.first.sql.util.ConnectionUtil;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class User2Create extends HttpServlet {
     @Override
@@ -27,21 +29,22 @@ public class User2Create extends HttpServlet {
         }
         String name = req.getParameter("name");
         boolean isFieldValid = JavaUtil.validateField(Constants.NAME_REGEX, name);
-        if (!isFieldValid){
-            JavaUtil.setJspPage(req, resp,  Constants.USER_2_CREATE);
+        if (!isFieldValid) {
+            JavaUtil.setJspPage(req, resp, Constants.USER_2_CREATE);
             return;
         }
         String email = req.getParameter("email");
         JavaUtil.validateField(Constants.EMAIL_REGEX, email);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String dobString = req.getParameter("dob");
-        System.out.println(dobString);
+        System.out.println("DOBSTRING " + dobString);
         java.sql.Date dob = null;
         try {
             dob = Date.valueOf(dobString);
-            System.out.println(dob + "DOB");
-            User2Repo.create(name ,email , dob);
-        } catch (RuntimeException e) {
-           e.printStackTrace();
+            String formatDate = formatter.format(dob);
+            System.out.println(formatDate + " FORMATDATE");
+            System.out.println(dob + " DOB");
+            User2Repo.create(name, email, dob);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -55,6 +55,9 @@
             <div>
                  <a href="/first-web-project/companyCreate" class=" Create "> Create </a>
            </div>
+           <div>
+               <a href="/first-web-project/" class="button">Index</a>
+           </div>
     </body>
 </html>
 

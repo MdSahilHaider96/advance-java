@@ -20,21 +20,21 @@
             <a href="/first-web-project/cityManagement"> City Management  </a>
          </div>
          <div>
-               <a href="/first-web-project/employeesCreate"> Employees Management  </a>
+               <a href="/first-web-project/employeesList"> Employees Management  </a>
                   </div>
          <div>
-            <a href="/first-web-project/companyCreate"> Company Management  </a>
+            <a href="/first-web-project/companyList"> Company Management  </a>
              </div>
 
               <div>
-                 <a href="/first-web-project/communityCreate"> Community Management  </a>
+                 <a href="/first-web-project/communityList"> Community Management  </a>
                 </div>
                    <div>
-                 <a href="/first-web-project/carCreate"> Car Management  </a>
+                 <a href="/first-web-project/carList"> Car Management  </a>
                 </div>
 
               <div>
-            <a href="/first-web-project/user2Create"> User Management  </a>
+            <a href="/first-web-project/user2List"> User Management  </a>
            </div>
 
 	</body>

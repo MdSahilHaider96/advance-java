@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.first.common.util.Constants;
+import org.first.common.util.JavaUtil;
 import org.first.sql.util.ConnectionUtil;
 import org.first.web.studentManagement.Model.Student;
 import org.first.web.studentManagement.service.StudentService;
@@ -43,12 +45,37 @@ public class StudentUpdate extends HttpServlet {
         String idString = req.getParameter("id");
         int id = Integer.parseInt(idString);
         String firstName = req.getParameter("firstName");
+        boolean isfNamevalid = JavaUtil.validateField(Constants.NAME_REGEX, firstName);
+        if (!isfNamevalid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/student-management/student-update.jsp");
+            return;
+        }
         String middleName = req.getParameter("middleName");
+        boolean isMNamevalid = JavaUtil.validateField(Constants.NAME_REGEX, middleName);
+        if (!isMNamevalid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/student-management/student-update.jsp");
+            return;
+        }
         String surName = req.getParameter("surName");
+        boolean isSNamevalid = JavaUtil.validateField(Constants.NAME_REGEX, surName);
+        if (!isSNamevalid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/student-management/student-update.jsp");
+            return;
+        }
         String email = req.getParameter("email");
+        boolean isEmailValid = JavaUtil.validateField(Constants.EMAIL_REGEX, email);
+        if (!isEmailValid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/student-management/student-update.jsp");
+            return;
+        }
         int age = Integer.parseInt(req.getParameter("age"));
         String gender = req.getParameter("gender");
         int rollNo = Integer.parseInt(req.getParameter("rollNo"));
+        boolean isRollValid = JavaUtil.validateField(Constants.NUMBER_REGEX, String.valueOf(rollNo));
+        if (!isRollValid) {
+            JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/student-management/student-update.jsp");
+            return;
+        }
         int standard = Integer.parseInt(req.getParameter("standard"));
         String fatherName = req.getParameter("fatherName");
         String schoolName = req.getParameter("schoolName");

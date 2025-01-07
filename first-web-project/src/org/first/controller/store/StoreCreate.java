@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.first.common.util.Constants;
+import org.first.common.util.JavaUtil;
 import org.first.service.StoreService;
 import org.first.sql.util.ConnectionUtil;
 
@@ -30,10 +32,30 @@ public class StoreCreate extends HttpServlet {
         }
         try {
             String firstName = req.getParameter("firstName");
+            boolean isfNameValid = JavaUtil.validateField(Constants.NAME_REGEX, firstName);
+            if (!isfNameValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/store/store-create.jsp");
+                return;
+            }
             String lastName = req.getParameter("lastName");
+            boolean isLNameValid = JavaUtil.validateField(Constants.NAME_REGEX, lastName);
+            if (!isLNameValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/store/store-create.jsp");
+                return;
+            }
             String email = req.getParameter("email");
+            boolean isEmailValid = JavaUtil.validateField(Constants.EMAIL_REGEX, email);
+            if (!isEmailValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/store/store-create.jsp");
+                return;
+            }
             String address = req.getParameter("address");
             String phnNo = req.getParameter("phnNo");
+            boolean isNumberValid = JavaUtil.validateField(Constants.NUMBER_REGEX, phnNo);
+            if (!isNumberValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/store/store-create.jsp");
+                return;
+            }
             String totalBill = req.getParameter("totalBill");
             storeService.create(firstName,lastName,email,address,phnNo,totalBill);
         } catch (Exception e) {

@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.first.common.util.Constants;
+import org.first.common.util.JavaUtil;
 import org.first.service.CommunityService;
 import org.first.sql.util.ConnectionUtil;
 
@@ -31,10 +33,25 @@ public class CommunityCreate extends HttpServlet {
         }
         try {
             String firstName = req.getParameter("firstName");
+            boolean isNameValid = JavaUtil.validateField(Constants.NAME_REGEX, firstName);
+            if (!isNameValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/community/community-create.jsp");
+                return;
+            }
             String lastName = req.getParameter("lastName");
+            boolean islNameValid = JavaUtil.validateField(Constants.NAME_REGEX, lastName);
+            if (!islNameValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/community/community-create.jsp");
+                return;
+            }
             String address = req.getParameter("address");
             String gender = req.getParameter("gender");
             String contactNo = req.getParameter("contactNo");
+            boolean isNumberValid = JavaUtil.validateField(Constants.NUMBER_REGEX, contactNo);
+            if (!isNumberValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/community/community-create.jsp");
+                return;
+            }
             communityService.create(firstName, lastName, address , gender , contactNo);
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.first.common.util.Constants;
+import org.first.common.util.JavaUtil;
 import org.first.service.CompanyService;
 import org.first.sql.util.ConnectionUtil;
 
@@ -33,10 +35,25 @@ public class CompanyCreate extends HttpServlet {
         }
         try {
             String name = req.getParameter("name");
+            boolean isNameValid = JavaUtil.validateField(Constants.NAME_REGEX, name);
+            if (!isNameValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/company/company-create.jsp");
+                return;
+            }
             String location = req.getParameter("location");
             String totalEmployees = req.getParameter("totalEmployees");
             String email = req.getParameter("email");
+            boolean isEmailValid = JavaUtil.validateField(Constants.EMAIL_REGEX, email);
+            if (!isEmailValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/company/company-create.jsp");
+                return;
+            }
             String contactNo = req.getParameter("contactNo");
+            boolean isNumberValid = JavaUtil.validateField(Constants.NUMBER_REGEX, contactNo);
+            if (!isNumberValid) {
+                JavaUtil.setJspPage(req, resp,"/WEB-INF/jsps/company/company-create.jsp");
+                return;
+            }
             companyService.create(name, location, totalEmployees , email , contactNo );
         } catch (Exception e) {
             throw new RuntimeException(e);

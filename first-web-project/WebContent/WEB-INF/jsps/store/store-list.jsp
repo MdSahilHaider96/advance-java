@@ -56,6 +56,9 @@
             <div>
                  <a href="/first-web-project/storeCreate" class=" Create "> Create </a>
            </div>
+           <div>
+              <a href="/first-web-project/" class="button">Index</a>
+           </div>
     </body>
 </html>
 
