@@ -1,18 +1,21 @@
 package org.first.model;
 
-import java.util.Date;
+import java.sql.Date;
 
-public class Student {
-    private int id;
+public class User2 {
+    private int id ;
     private String name;
     private String email;
-    public Student() {
+    private java.sql.Date dob;
+
+    public User2() {
     }
 
-    public Student(int id, String name, String email) {
+    public User2(int id, String name, String email, java.sql.Date dob) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.dob = dob;
     }
 
     public int getId() {
@@ -39,12 +42,22 @@ public class Student {
         this.email = email;
     }
 
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
     @Override
     public String toString() {
-        return "Student{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", dob=" + dob +
                 '}';
     }
 }

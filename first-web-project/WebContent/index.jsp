@@ -32,5 +32,10 @@
                    <div>
                  <a href="/first-web-project/carCreate"> Car Management  </a>
                 </div>
+
+              <div>
+            <a href="/first-web-project/user2Create"> User Management  </a>
+           </div>
+
 	</body>
 </html>
