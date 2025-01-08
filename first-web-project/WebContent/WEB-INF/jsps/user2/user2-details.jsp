@@ -4,6 +4,9 @@
         	<meta charset="ISO-8859-1">
         	<title>Car Details </title>
         <%@ page import="org.first.model.User2" %>
+        <%@ page import="java.time.format.DateTimeFormatter" %>
+        <%@ page import="java.time.Period" %>
+        <%@ page import="java.time.LocalDate" %>
          <style>
          button {
              font: bold 11px Arial;
@@ -35,7 +38,7 @@
                       <div>
                         DOB : <%= user2.getDob() %>
                      </div>
-
+                      <div>
                          <a href="/first-web-project/user2List" class=" List "> List </a>
                      </div>
                      <div>

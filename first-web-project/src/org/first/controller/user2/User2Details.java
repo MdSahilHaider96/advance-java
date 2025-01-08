@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class User2Details extends HttpServlet {
     @Override
@@ -22,12 +23,6 @@ public class User2Details extends HttpServlet {
          String  id = req.getParameter("id");
          int user2id = Integer.parseInt(id);
          User2 user2 = null;
-//         String dobString = req.getParameter("dob");
-//         String age = dobString;
-//         LocalDate currDate = LocalDate.now();
-//         Period period = Period.between(LocalDate.parse(age),currDate);
-//         req.setAttribute("findAge",period);
-//         System.out.println(period);
         try {
             user2 = user2Service.findById(user2id);
         } catch (Exception e) {

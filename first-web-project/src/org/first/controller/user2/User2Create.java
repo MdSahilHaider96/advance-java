@@ -35,14 +35,12 @@ public class User2Create extends HttpServlet {
         }
         String email = req.getParameter("email");
         JavaUtil.validateField(Constants.EMAIL_REGEX, email);
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String dobString = req.getParameter("dob");
         System.out.println("DOBSTRING " + dobString);
         java.sql.Date dob = null;
+
         try {
             dob = Date.valueOf(dobString);
-            String formatDate = formatter.format(dob);
-            System.out.println(formatDate + " FORMATDATE");
             System.out.println(dob + " DOB");
             User2Repo.create(name, email, dob);
         } catch (Exception e) {
